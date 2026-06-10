@@ -1,0 +1,31 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- Isaac Sim / Omniverse runtime junk ----
+*.log
+.thumbs/
+*.usdc.tmp
+
+# ---- ROS / catkin / colcon build artifacts (this is a ROS package) ----
+build/
+devel/
+install/
+log/
+
+# ---- Machine-specific editor config ----
+# .vscode/settings.json here holds absolute paths + the exact Isaac Sim build
+# hash for THIS machine; useless on others. Remove if you want to share it.
+.vscode/
+
+# ---- Claude Code local (personal) settings ----
+.claude/settings.local.json
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+*.swp
+*~

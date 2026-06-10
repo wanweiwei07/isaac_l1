@@ -1,0 +1,1376 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.2"
+    }
+    defaultPrim = "l1_h0602"
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "l1_h0602"
+{
+    def Scope "Physics"
+    {
+        def PhysicsFixedJoint "root_joint"
+        {
+            rel physics:body0 = </l1_h0602>
+            rel physics:body1 = </l1_h0602/Geometry/base_link>
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "waist_joint1"
+        {
+            rel physics:body0 = </l1_h0602/Geometry/base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1>
+            point3f physics:localPos0 = (-0.208, 0, 0.714)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "waist_joint2"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
+            point3f physics:localPos0 = (0, 0, 0.5125)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -1, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -179.90875
+            float physics:upperLimit = 179.90875
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "neck_joint1"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/neck_link1>
+            point3f physics:localPos0 = (0, 0, 0.2565)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -1, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -179.90875
+            float physics:upperLimit = 179.90875
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "neck_joint2"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/neck_link1>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/neck_link1/neck_link2>
+            point3f physics:localPos0 = (0, 0, 0.042)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -45.836624
+            float physics:upperLimit = 45.836624
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "left_arm_joint_1"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
+            point3f physics:localPos0 = (0, 0.11795, 0.14597)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.10452884, -0.99452186, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -57.29578
+            float physics:upperLimit = 57.29578
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "left_arm_joint_2"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
+            point3f physics:localPos0 = (0.0016241475, 0.112000026, 0.0485)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -135.21803
+            float physics:upperLimit = 135.21803
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "left_arm_joint_3"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
+            point3f physics:localPos0 = (2.7755576e-17, 0.315, -1.3877788e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -1, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -216.97339
+            float physics:upperLimit = 34.37747
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "left_arm_joint_4"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
+            point3f physics:localPos0 = (0.126, 0, -1.3877788e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.0007320915, -0.7071064, 0.0007321014, 0.7071064)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -170.16847
+            float physics:upperLimit = 170.16847
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "left_arm_joint_5"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
+            point3f physics:localPos0 = (-2.7755576e-17, 0, 0.1576)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -1.088539e-16, -0.70710677, -5.551115e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -80.21409
+            float physics:upperLimit = 68.75494
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "left_arm_joint_6"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
+            point3f physics:localPos0 = (0.035619274, -2.220446e-16, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-1.6653345e-16, -0.70710677, -1.110223e-16, 0.70710677)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "right_arm_joint_1"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
+            point3f physics:localPos0 = (0, -0.11795376, 0.14597148)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.10452827, -0.9945219, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -57.29578
+            float physics:upperLimit = 57.29578
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "right_arm_joint_2"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
+            point3f physics:localPos0 = (0, -0.112000026, 0.0485)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -135.21803
+            float physics:upperLimit = 135.21803
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "right_arm_joint_3"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
+            point3f physics:localPos0 = (0, -0.315, -4.1633363e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -1, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -34.37747
+            float physics:upperLimit = 214.5326
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "right_arm_joint_4"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
+            point3f physics:localPos0 = (0.126, 0, -1.3877788e-17)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (2.7755576e-16, -0.70710677, -5.551115e-17, 0.70710677)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -170.16847
+            float physics:upperLimit = 170.16847
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "right_arm_joint_5"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
+            point3f physics:localPos0 = (-2.7755576e-17, 0, 0.1576)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.70710677, -7.3109406e-14, 0.70710677, -7.321921e-14)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -80.21409
+            float physics:upperLimit = 68.75494
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsRevoluteJoint "right_arm_joint_6"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
+            point3f physics:localPos0 = (0.035619, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.70710677, -9.381857e-7, -0.70710677, -9.381857e-7)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 3
+        }
+
+        def PhysicsFixedJoint "left_linkerhand_mount_joint"
+        {
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            point3f physics:localPos0 = (-4.1633363e-17, 0, 0.034)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsFixedJoint "right_linkerhand_mount_joint"
+        {
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            point3f physics:localPos0 = (-6.938894e-18, 0, 0.034)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+
+        def PhysicsRevoluteJoint "lh_thumb_cmc_yaw"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
+            point3f physics:localPos0 = (0.011508, -0.022975, 0.032794)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 74.48451
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_thumb_cmc_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
+            point3f physics:localPos0 = (0.0061649, -0.010678, -0.004891)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (-0.41919965, -0.47202873, 0.27252436, -0.7260792)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 33.231552
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_thumb_ip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 2.29
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_thumb_cmc_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals/lh_thumb_distal>
+            point3f physics:localPos0 = (0.0037776, 0, 0.045368)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 61.87944
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_index_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
+            point3f physics:localPos0 = (0.0024758, -0.02419, 0.098779)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.99965733, 0.026176646, 2.220446e-16, -1.110223e-16)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_index_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_index_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal/lh_index_distal>
+            point3f physics:localPos0 = (-0.0052516, -2.220446e-16, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_middle_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
+            point3f physics:localPos0 = (0.00052576, -0.00634, 0.1027)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_middle_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_middle_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal/lh_middle_distal>
+            point3f physics:localPos0 = (-0.0052516, -2.220446e-16, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_ring_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
+            point3f physics:localPos0 = (0.0010258, 0.011135, 0.098767)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.99965733, -0.026176646, 5.551115e-17, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_ring_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_ring_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal/lh_ring_distal>
+            point3f physics:localPos0 = (-0.0052516, -2.220446e-16, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_pinky_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
+            point3f physics:localPos0 = (0.0024758, 0.028372, 0.092741)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.99904823, -0.043619126, 1.9428903e-16, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "lh_pinky_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_pinky_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal/lh_pinky_distal>
+            point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_thumb_cmc_yaw"
+        {
+            uniform token physics:axis = "Z"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
+            point3f physics:localPos0 = (0.011508, 0.022975, 0.032794)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0, -1, 0, 0)
+            quatf physics:localRot1 = (0, -1, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 77.92226
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_thumb_cmc_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
+            point3f physics:localPos0 = (0.0061649, 0.010678, -0.004891)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.41919965, -0.47202873, -0.27252436, -0.7260792)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 33.231552
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_thumb_ip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 1.86
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_thumb_cmc_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals/rh_thumb_distal>
+            point3f physics:localPos0 = (0.0037776, 0, 0.045368)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 61.87944
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_index_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
+            point3f physics:localPos0 = (0.0024758, 0.02419, 0.098779)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.99965733, -0.026176646, 1.110223e-16, -5.551115e-17)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_index_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_index_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal/rh_index_distal>
+            point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_middle_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
+            point3f physics:localPos0 = (0.00052576, 0.00634, 0.1027)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_middle_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_middle_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal/rh_middle_distal>
+            point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_ring_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
+            point3f physics:localPos0 = (0.0010258, -0.011135, 0.098767)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.99965733, 0.026176646, 0, 1.3877788e-16)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_ring_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_ring_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal/rh_ring_distal>
+            point3f physics:localPos0 = (-0.0052516, 2.220446e-16, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_pinky_mcp_pitch"
+        {
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
+            point3f physics:localPos0 = (0.0024758, -0.028372, 0.092741)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (0.99904823, 0.043619126, 2.7755576e-16, 1.9428903e-16)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 91.67325
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+
+        def PhysicsRevoluteJoint "rh_pinky_dip" (
+            prepend apiSchemas = ["NewtonMimicAPI"]
+        )
+        {
+            float newton:mimicCoef1 = 0.89
+            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_pinky_mcp_pitch>
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
+            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal/rh_pinky_distal>
+            point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 81.93297
+            custom float urdf:limit:effort = 100
+            custom float urdf:limit:velocity = 1
+        }
+    }
+
+    over "Geometry"
+    {
+        over "base_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI", "NewtonArticulationRootAPI", "PhysicsMassAPI"]
+        )
+        {
+            point3f physics:centerOfMass = (-0.021001624, -0.0005738248, 0.21261086)
+            float3 physics:diagonalInertia = (0.67106324, 1.178424, 1.6058213)
+            float physics:mass = 40.598995
+            quatf physics:principalAxes = (0.005715446, 0.7130397, 0.70108324, -0.004897598)
+
+            over "base_link_1" (
+                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "convexHull"
+            }
+
+            over "waist_link1" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+            )
+            {
+                point3f physics:centerOfMass = (0.000004713638, 0.000042971733, 0.32989973)
+                float3 physics:diagonalInertia = (0.008869972, 0.020822605, 0.020906985)
+                float physics:mass = 2.7279058
+                quatf physics:principalAxes = (0.5006132, 0.49938637, 0.5006109, 0.49938798)
+
+                over "waist_link1_1" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                )
+                {
+                    uniform token physics:approximation = "convexHull"
+                }
+
+                over "waist_link2" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    point3f physics:centerOfMass = (-2.7574296e-9, -0.0000013566492, 0.11299995)
+                    float3 physics:diagonalInertia = (0.010968674, 0.012719989, 0.015152222)
+                    float physics:mass = 4.891463
+                    quatf physics:principalAxes = (0.5010075, -0.5010063, -0.4989925, -0.49898964)
+
+                    over "waist_link2_1" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                    )
+                    {
+                        uniform token physics:approximation = "convexHull"
+                    }
+
+                    over "neck_link1" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                    )
+                    {
+                        point3f physics:centerOfMass = (8.519761e-7, -0.0024515737, 0.037953455)
+                        float3 physics:diagonalInertia = (0.00007578228, 0.000080283855, 0.00009027495)
+                        float physics:mass = 0.17790711
+                        quatf physics:principalAxes = (0.38606822, 0.59255195, 0.59233385, 0.38597175)
+
+                        over "neck_link1_1" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                        )
+                        {
+                            uniform token physics:approximation = "convexHull"
+                        }
+
+                        over "neck_link2" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                        )
+                        {
+                            point3f physics:centerOfMass = (0.014714791, 0.09203115, 0.0008615591)
+                            float3 physics:diagonalInertia = (0.001245065, 0.0014236656, 0.0016246443)
+                            float physics:mass = 0.33029214
+                            quatf physics:principalAxes = (0.58948386, 0.38900515, 0.584962, 0.398752)
+
+                            over "neck_link2_1" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                            )
+                            {
+                                uniform token physics:approximation = "convexHull"
+                            }
+
+                            over "head_left_camera_optical_frame"
+                            {
+                            }
+
+                            over "head_right_camera_optical_frame"
+                            {
+                            }
+                        }
+                    }
+
+                    over "left_arm_link_1" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                    )
+                    {
+                        point3f physics:centerOfMass = (0.0016293, 0.094378, 0.045525)
+                        float3 physics:diagonalInertia = (0.0024340993, 0.0026913052, 0.0033018955)
+                        float physics:mass = 2.466
+                        quatf physics:principalAxes = (0.804292, -0.5942337, 0.00033661287, -0.0007102182)
+
+                        over "left_arm_link_1_1" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                        )
+                        {
+                            uniform token physics:approximation = "convexHull"
+                        }
+
+                        over "left_arm_link_2" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                        )
+                        {
+                            point3f physics:centerOfMass = (0.0000018893, 0.20707, 0.014617)
+                            float3 physics:diagonalInertia = (0.0013224282, 0.0081146, 0.008962371)
+                            float physics:mass = 2.07
+                            quatf physics:principalAxes = (0.0030789485, 0.7070967, 0.7071036, 0.0030384117)
+
+                            over "left_arm_link_2_1" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                            )
+                            {
+                                uniform token physics:approximation = "convexHull"
+                            }
+
+                            over "left_arm_link_3" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                            )
+                            {
+                                point3f physics:centerOfMass = (0.062919, -0.000015572, 0.0072281)
+                                float3 physics:diagonalInertia = (0.00046538765, 0.0011132, 0.0013161723)
+                                float physics:mass = 0.685
+                                quatf physics:principalAxes = (0.9990763, 0.00000393206, -0.042971104, 0.000013714217)
+
+                                over "left_arm_link_3_1" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                )
+                                {
+                                    uniform token physics:approximation = "convexHull"
+                                }
+
+                                over "left_arm_link_4" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                )
+                                {
+                                    point3f physics:centerOfMass = (-0.0012645, -0.0000061634, 0.075519)
+                                    float3 physics:diagonalInertia = (0.0005051667, 0.0013431, 0.0015055533)
+                                    float physics:mass = 1.142
+                                    quatf physics:principalAxes = (0.6961071, 0.0000021368041, 0.71793795, -0.0000088428915)
+
+                                    over "left_arm_link_4_1" (
+                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                    )
+                                    {
+                                        uniform token physics:approximation = "convexHull"
+                                    }
+
+                                    over "left_arm_link_5" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                    )
+                                    {
+                                        point3f physics:centerOfMass = (0.0042733, -0.0000028558, -0.0023871)
+                                        float3 physics:diagonalInertia = (0.000012013835, 0.000014217, 0.000018412165)
+                                        float physics:mass = 0.195
+                                        quatf physics:principalAxes = (0.70057225, 0.000052483043, 0.71358144, 0.00013799375)
+
+                                        over "left_arm_link_5_1" (
+                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                        )
+                                        {
+                                            uniform token physics:approximation = "convexHull"
+                                        }
+
+                                        over "left_arm_link_6" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                        )
+                                        {
+                                            point3f physics:centerOfMass = (8.9693e-7, 0.0000055721, -0.0070325)
+                                            float3 physics:diagonalInertia = (0.000050099166, 0.000050424824, 0.00006515601)
+                                            float physics:mass = 0.763
+                                            quatf physics:principalAxes = (-0.00019961158, 0.6188934, 0.7854749, -0.00036547284)
+
+                                            over "left_arm_link_6_1" (
+                                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                            )
+                                            {
+                                                uniform token physics:approximation = "convexHull"
+                                            }
+
+                                            over "lh_hand_base_link" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                            )
+                                            {
+                                                point3f physics:centerOfMass = (-0.0015778857, -0.00034876727, 0.053845223)
+                                                float3 physics:diagonalInertia = (0.000022785269, 0.000033403405, 0.00005226303)
+                                                float physics:mass = 0.067293525
+                                                quatf physics:principalAxes = (0.7112235, 0.0196564, 0.7019677, -0.031875554)
+
+                                                over "hand_base_link_1" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                )
+                                                {
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                over "lh_thumb_metacarpals_base2" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (0.0016280068, -0.0027668017, -0.0018423444)
+                                                    float3 physics:diagonalInertia = (2.804746e-8, 4.6153662e-8, 5.5545172e-8)
+                                                    float physics:mass = 0.001385883
+                                                    quatf physics:principalAxes = (0.71651435, 0.1483551, 0.6348633, 0.2480857)
+
+                                                    over "thumb_metacarpals_base2_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "lh_thumb_metacarpals" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.00004248162, 0.000017418392, 0.022834163)
+                                                        float3 physics:diagonalInertia = (8.782631e-7, 0.0000011610094, 0.0000017675784)
+                                                        float physics:mass = 0.012338159
+                                                        quatf physics:principalAxes = (0.602796, 0.6027095, 0.37003604, 0.3693936)
+
+                                                        over "thumb_metacarpals_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        over "lh_thumb_distal" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                        )
+                                                        {
+                                                            point3f physics:centerOfMass = (-0.004137257, -5.907045e-8, 0.023011401)
+                                                            float3 physics:diagonalInertia = (2.7226213e-7, 0.0000012248909, 0.0000013107585)
+                                                            float physics:mass = 0.0076333294
+                                                            quatf physics:principalAxes = (0.7312508, 0.000050898147, 0.68210864, 0.000050140923)
+
+                                                            over "thumb_distal_1" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                            )
+                                                            {
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                over "lh_index_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.0020865656, 0.0000025383872, 0.017273495)
+                                                    float3 physics:diagonalInertia = (7.583063e-8, 2.7291307e-7, 2.757608e-7)
+                                                    float physics:mass = 0.0025317466
+                                                    quatf physics:principalAxes = (0.78133, 0.007643632, 0.6240355, 0.0066868095)
+
+                                                    over "index_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "lh_index_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.0065898662, 0.0000051385564, 0.01943936)
+                                                        float3 physics:diagonalInertia = (7.204472e-8, 3.6532765e-7, 3.7459085e-7)
+                                                        float physics:mass = 0.003769511
+                                                        quatf physics:principalAxes = (0.54057455, 0.0024824692, 0.84128624, 0.0032386186)
+
+                                                        over "index_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+
+                                                over "lh_middle_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.0020866066, 0.0000025691818, 0.0172735)
+                                                    float3 physics:diagonalInertia = (7.5831146e-8, 2.7291338e-7, 2.757611e-7)
+                                                    float physics:mass = 0.0025317736
+                                                    quatf physics:principalAxes = (0.7813296, 0.0076768305, 0.62403536, 0.0067128767)
+
+                                                    over "middle_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "lh_middle_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.0065898653, 0.0000051086295, 0.019439332)
+                                                        float3 physics:diagonalInertia = (7.204529e-8, 3.6532907e-7, 3.745922e-7)
+                                                        float physics:mass = 0.003769528
+                                                        quatf physics:principalAxes = (0.5405751, 0.0024706838, 0.84128594, 0.003223407)
+
+                                                        over "middle_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+
+                                                over "lh_ring_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.0020866792, 0.0000026300042, 0.017273493)
+                                                    float3 physics:diagonalInertia = (7.5832226e-8, 2.7291406e-7, 2.7576172e-7)
+                                                    float physics:mass = 0.0025318223
+                                                    quatf physics:principalAxes = (0.78132856, 0.0077359965, 0.62403536, 0.0067587425)
+
+                                                    over "ring_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "lh_ring_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.0065898667, 0.000005058835, 0.019439397)
+                                                        float3 physics:diagonalInertia = (7.20441e-8, 3.6532612e-7, 3.7458938e-7)
+                                                        float physics:mass = 0.003769496
+                                                        quatf physics:principalAxes = (0.54057366, 0.002450255, 0.841287, 0.0031969126)
+
+                                                        over "ring_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+
+                                                over "lh_pinky_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.002086736, 0.0000026806224, 0.017273486)
+                                                    float3 physics:diagonalInertia = (7.5833086e-8, 2.7291458e-7, 2.7576223e-7)
+                                                    float physics:mass = 0.00253186
+                                                    quatf physics:principalAxes = (0.78132784, 0.007784023, 0.6240353, 0.0067960154)
+
+                                                    over "pinky_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "lh_pinky_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.006589876, 0.0000050308754, 0.01943945)
+                                                        float3 physics:diagonalInertia = (7.2043434e-8, 3.6532472e-7, 3.7458818e-7)
+                                                        float physics:mass = 0.0037694806
+                                                        quatf physics:principalAxes = (0.54057276, 0.0024336982, 0.8412878, 0.0031746821)
+
+                                                        over "pinky_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "left_wrist_camera_optical_frame"
+                                            {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    over "right_arm_link_1" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                    )
+                    {
+                        point3f physics:centerOfMass = (-0.0000051604, -0.094378, 0.045525)
+                        float3 physics:diagonalInertia = (0.0024340993, 0.0026913052, 0.0033018955)
+                        float physics:mass = 2.466
+                        quatf physics:principalAxes = (-0.5942337, 0.804292, 0.00071018323, -0.0003374576)
+
+                        over "right_arm_link_1_1" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                        )
+                        {
+                            uniform token physics:approximation = "convexHull"
+                        }
+
+                        over "right_arm_link_2" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                        )
+                        {
+                            point3f physics:centerOfMass = (-0.0000018894, -0.20707, 0.014617)
+                            float3 physics:diagonalInertia = (0.0013224282, 0.0081146, 0.008962371)
+                            float physics:mass = 2.07
+                            quatf physics:principalAxes = (-0.0030789482, 0.7070967, 0.7071036, -0.003038412)
+
+                            over "right_arm_link_2_1" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                            )
+                            {
+                                uniform token physics:approximation = "convexHull"
+                            }
+
+                            over "right_arm_link_3" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                            )
+                            {
+                                point3f physics:centerOfMass = (0.062919, -0.000015532, 0.007228)
+                                float3 physics:diagonalInertia = (0.00046527508, 0.0011131, 0.0013159649)
+                                float physics:mass = 0.685
+                                quatf physics:principalAxes = (0.9990773, -0.000084404215, -0.042947926, 0.000094113515)
+
+                                over "right_arm_link_3_1" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                )
+                                {
+                                    uniform token physics:approximation = "convexHull"
+                                }
+
+                                over "right_arm_link_4" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                )
+                                {
+                                    point3f physics:centerOfMass = (-0.001266, -0.000006561, 0.075519)
+                                    float3 physics:diagonalInertia = (0.00050516677, 0.0013431, 0.0015055533)
+                                    float physics:mass = 1.142
+                                    quatf physics:principalAxes = (0.69610745, 0.0000019456215, 0.7179376, -0.000016531914)
+
+                                    over "right_arm_link_4_1" (
+                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                    )
+                                    {
+                                        uniform token physics:approximation = "convexHull"
+                                    }
+
+                                    over "right_arm_link_5" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                    )
+                                    {
+                                        point3f physics:centerOfMass = (0.0042733, 0.0000028558, 0.0023871)
+                                        float3 physics:diagonalInertia = (0.000012013835, 0.000014217, 0.000018412165)
+                                        float physics:mass = 0.195
+                                        quatf physics:principalAxes = (0.71358144, -0.00013799375, 0.70057225, -0.000052483043)
+
+                                        over "right_arm_link_5_1" (
+                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                        )
+                                        {
+                                            uniform token physics:approximation = "convexHull"
+                                        }
+
+                                        over "right_arm_link_6" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                        )
+                                        {
+                                            point3f physics:centerOfMass = (8.9693e-7, 0.0000055721, -0.0070325)
+                                            float3 physics:diagonalInertia = (0.000050099166, 0.000050424824, 0.00006515601)
+                                            float physics:mass = 0.763
+                                            quatf physics:principalAxes = (-0.00019961158, 0.6188934, 0.7854749, -0.00036547284)
+
+                                            over "right_arm_link_6_1" (
+                                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                            )
+                                            {
+                                                uniform token physics:approximation = "convexHull"
+                                            }
+
+                                            over "rh_hand_base_link" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                            )
+                                            {
+                                                point3f physics:centerOfMass = (-0.0016032078, 0.0003584627, 0.05380027)
+                                                float3 physics:diagonalInertia = (0.000022771375, 0.0000334005, 0.00005224569)
+                                                float physics:mass = 0.06740078
+                                                quatf physics:principalAxes = (0.7018665, 0.020788416, 0.7113104, -0.03144441)
+
+                                                over "hand_base_link_1" (
+                                                    prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                )
+                                                {
+                                                    uniform token physics:approximation = "convexHull"
+                                                }
+
+                                                over "rh_thumb_metacarpals_base2" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (0.0016279573, 0.0027667198, -0.0018422772)
+                                                    float3 physics:diagonalInertia = (2.776902e-8, 4.703569e-8, 5.4942674e-8)
+                                                    float physics:mass = 0.0013859107
+                                                    quatf physics:principalAxes = (0.6528012, 0.10185183, 0.70294756, 0.2633278)
+
+                                                    over "thumb_metacarpals_base2_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "rh_thumb_metacarpals" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.00004249206, -0.000016788566, 0.022834152)
+                                                        float3 physics:diagonalInertia = (8.782641e-7, 0.000001161008, 0.0000017675775)
+                                                        float physics:mass = 0.012338161
+                                                        quatf physics:principalAxes = (0.36990675, 0.36952356, 0.6031409, 0.602364)
+
+                                                        over "thumb_metacarpals_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+
+                                                        over "rh_thumb_distal" (
+                                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                        )
+                                                        {
+                                                            point3f physics:centerOfMass = (-0.0041369074, -4.548428e-7, 0.023009717)
+                                                            float3 physics:diagonalInertia = (2.7229493e-7, 0.0000012245721, 0.0000013104725)
+                                                            float physics:mass = 0.007633026
+                                                            quatf physics:principalAxes = (0.6821193, -7.0273245e-7, 0.73124087, 0.000012204884)
+
+                                                            over "thumb_distal_1" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                            )
+                                                            {
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                over "rh_index_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.002086656, -0.000004896499, 0.017273672)
+                                                    float3 physics:diagonalInertia = (7.5831615e-8, 2.7291563e-7, 2.75761e-7)
+                                                    float physics:mass = 0.0025317853
+                                                    quatf physics:principalAxes = (0.6240712, -0.00082244526, 0.781367, -0.0003002987)
+
+                                                    over "index_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "rh_index_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.0065894, -0.0000045997654, 0.019443413)
+                                                        float3 physics:diagonalInertia = (7.1971144e-8, 3.6513106e-7, 3.7440316e-7)
+                                                        float physics:mass = 0.0037678713
+                                                        quatf physics:principalAxes = (0.8413566, -0.0039858283, 0.54045784, -0.002915337)
+
+                                                        over "index_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+
+                                                over "rh_middle_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.0020866108, -0.0000049345185, 0.017273681)
+                                                    float3 physics:diagonalInertia = (7.583094e-8, 2.7291517e-7, 2.7576064e-7)
+                                                    float physics:mass = 0.002531755
+                                                    quatf physics:principalAxes = (0.6240709, -0.0007828939, 0.7813673, -0.00025135832)
+
+                                                    over "middle_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "rh_middle_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.006589403, -0.0000045885745, 0.019443452)
+                                                        float3 physics:diagonalInertia = (7.197081e-8, 3.6512992e-7, 3.7440213e-7)
+                                                        float physics:mass = 0.0037678627
+                                                        quatf physics:principalAxes = (0.84135705, -0.0039771916, 0.54045725, -0.0029091667)
+
+                                                        over "middle_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+
+                                                over "rh_ring_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.002086543, -0.0000049853857, 0.017273674)
+                                                    float3 physics:diagonalInertia = (7.5830066e-8, 2.7291458e-7, 2.7576016e-7)
+                                                    float physics:mass = 0.0025317096
+                                                    quatf physics:principalAxes = (0.6240707, -0.0007316186, 0.78136754, -0.00018741023)
+
+                                                    over "ring_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "rh_ring_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.006589403, -0.0000045662887, 0.0194435)
+                                                        float3 physics:diagonalInertia = (7.1969964e-8, 3.6512748e-7, 3.7439975e-7)
+                                                        float physics:mass = 0.0037678396
+                                                        quatf physics:principalAxes = (0.8413578, -0.0039602113, 0.5404562, -0.0028969203)
+
+                                                        over "ring_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+
+                                                over "rh_pinky_proximal" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    point3f physics:centerOfMass = (-0.0020864904, -0.0000050231456, 0.017273668)
+                                                    float3 physics:diagonalInertia = (7.58294e-8, 2.729141e-7, 2.757598e-7)
+                                                    float physics:mass = 0.002531674
+                                                    quatf physics:principalAxes = (0.6240705, -0.00069412886, 0.7813677, -0.00014060616)
+
+                                                    over "pinky_proximal_1" (
+                                                        prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                    )
+                                                    {
+                                                        uniform token physics:approximation = "convexHull"
+                                                    }
+
+                                                    over "rh_pinky_distal" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        point3f physics:centerOfMass = (0.0065894043, -0.000004552683, 0.019443534)
+                                                        float3 physics:diagonalInertia = (7.1969446e-8, 3.6512614e-7, 3.7439844e-7)
+                                                        float physics:mass = 0.0037678266
+                                                        quatf physics:principalAxes = (0.84135836, -0.003949584, 0.5404555, -0.0028890755)
+
+                                                        over "pinky_distal_1" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "NewtonCollisionAPI", "PhysicsMeshCollisionAPI", "NewtonMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            over "right_wrist_camera_optical_frame"
+                                            {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def PhysicsScene "PhysicsScene" (
+    prepend apiSchemas = ["NewtonSceneAPI"]
+)
+{
+}
+
