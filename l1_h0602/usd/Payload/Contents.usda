@@ -3,7 +3,7 @@
     customLayerData = {
         string creator = "URDF USD Converter v0.1.2"
     }
-    defaultPrim = "l1_h0602"
+    defaultPrim = "l1_h0612"
     kilogramsPerUnit = 1
     metersPerUnit = 1
     subLayers = [
@@ -14,7 +14,7 @@
     upAxis = "Z"
 )
 
-def Xform "l1_h0602"
+def Xform "l1_h0612"
 {
 }
 

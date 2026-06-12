@@ -3,20 +3,20 @@
     customLayerData = {
         string creator = "URDF USD Converter v0.1.2"
     }
-    defaultPrim = "l1_h0602"
+    defaultPrim = "l1_h0612"
     kilogramsPerUnit = 1
     metersPerUnit = 1
     upAxis = "Z"
 )
 
-def Xform "l1_h0602"
+def Xform "l1_h0612"
 {
     def Scope "Physics"
     {
         def PhysicsFixedJoint "root_joint"
         {
-            rel physics:body0 = </l1_h0602>
-            rel physics:body1 = </l1_h0602/Geometry/base_link>
+            rel physics:body0 = </l1_h0612>
+            rel physics:body1 = </l1_h0612/Geometry/base_link>
             point3f physics:localPos0 = (0, 0, 0)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -25,8 +25,8 @@ def Xform "l1_h0602"
 
         def PhysicsFixedJoint "waist_joint1"
         {
-            rel physics:body0 = </l1_h0602/Geometry/base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1>
+            rel physics:body0 = </l1_h0612/Geometry/base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1>
             point3f physics:localPos0 = (-0.208, 0, 0.714)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -38,8 +38,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "waist_joint2"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
             point3f physics:localPos0 = (0, 0, 0.5125)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
@@ -53,8 +53,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "neck_joint1"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/neck_link1>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/neck_link1>
             point3f physics:localPos0 = (0, 0, 0.2565)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
@@ -68,8 +68,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "neck_joint2"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/neck_link1>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/neck_link1/neck_link2>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/neck_link1>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/neck_link1/neck_link2>
             point3f physics:localPos0 = (0, 0, 0.042)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
@@ -83,8 +83,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "left_arm_joint_1"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
             point3f physics:localPos0 = (0, 0.11795, 0.14597)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (-0.10452884, -0.99452186, 0, 0)
@@ -98,8 +98,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "left_arm_joint_2"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
             point3f physics:localPos0 = (0.0016241475, 0.112000026, 0.0485)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.70710677, 0.70710677, 0, 0)
@@ -113,8 +113,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "left_arm_joint_3"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
             point3f physics:localPos0 = (2.7755576e-17, 0.315, -1.3877788e-17)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
@@ -128,8 +128,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "left_arm_joint_4"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
             point3f physics:localPos0 = (0.126, 0, -1.3877788e-17)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.0007320915, -0.7071064, 0.0007321014, 0.7071064)
@@ -143,8 +143,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "left_arm_joint_5"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
             point3f physics:localPos0 = (-2.7755576e-17, 0, 0.1576)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.70710677, -1.088539e-16, -0.70710677, -5.551115e-17)
@@ -158,8 +158,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "left_arm_joint_6"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
             point3f physics:localPos0 = (0.035619274, -2.220446e-16, 0)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (-1.6653345e-16, -0.70710677, -1.110223e-16, 0.70710677)
@@ -173,8 +173,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "right_arm_joint_1"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
             point3f physics:localPos0 = (0, -0.11795376, 0.14597148)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.10452827, -0.9945219, 0, 0)
@@ -188,8 +188,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "right_arm_joint_2"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
             point3f physics:localPos0 = (0, -0.112000026, 0.0485)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.70710677, -0.70710677, 0, 0)
@@ -203,8 +203,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "right_arm_joint_3"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
             point3f physics:localPos0 = (0, -0.315, -4.1633363e-17)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
@@ -218,8 +218,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "right_arm_joint_4"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
             point3f physics:localPos0 = (0.126, 0, -1.3877788e-17)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (2.7755576e-16, -0.70710677, -5.551115e-17, 0.70710677)
@@ -233,8 +233,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "right_arm_joint_5"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
             point3f physics:localPos0 = (-2.7755576e-17, 0, 0.1576)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (-0.70710677, -7.3109406e-14, 0.70710677, -7.321921e-14)
@@ -248,8 +248,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "right_arm_joint_6"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
             point3f physics:localPos0 = (0.035619, 0, 0)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.70710677, -9.381857e-7, -0.70710677, -9.381857e-7)
@@ -262,8 +262,8 @@ def Xform "l1_h0602"
 
         def PhysicsFixedJoint "left_linkerhand_mount_joint"
         {
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
             point3f physics:localPos0 = (-4.1633363e-17, 0, 0.034)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -272,8 +272,8 @@ def Xform "l1_h0602"
 
         def PhysicsFixedJoint "right_linkerhand_mount_joint"
         {
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
             point3f physics:localPos0 = (-6.938894e-18, 0, 0.034)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -283,8 +283,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "lh_thumb_cmc_yaw"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
             point3f physics:localPos0 = (0.011508, -0.022975, 0.032794)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -298,8 +298,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "lh_thumb_cmc_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
             point3f physics:localPos0 = (0.0061649, -0.010678, -0.004891)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (-0.41919965, -0.47202873, 0.27252436, -0.7260792)
@@ -315,10 +315,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 2.29
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_thumb_cmc_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/lh_thumb_cmc_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals/lh_thumb_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals/lh_thumb_distal>
             point3f physics:localPos0 = (0.0037776, 0, 0.045368)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -332,8 +332,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "lh_index_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
             point3f physics:localPos0 = (0.0024758, -0.02419, 0.098779)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.99965733, 0.026176646, 2.220446e-16, -1.110223e-16)
@@ -349,10 +349,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_index_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/lh_index_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal/lh_index_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal/lh_index_distal>
             point3f physics:localPos0 = (-0.0052516, -2.220446e-16, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -366,8 +366,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "lh_middle_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
             point3f physics:localPos0 = (0.00052576, -0.00634, 0.1027)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -383,10 +383,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_middle_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/lh_middle_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal/lh_middle_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal/lh_middle_distal>
             point3f physics:localPos0 = (-0.0052516, -2.220446e-16, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -400,8 +400,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "lh_ring_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
             point3f physics:localPos0 = (0.0010258, 0.011135, 0.098767)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.99965733, -0.026176646, 5.551115e-17, 0)
@@ -417,10 +417,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_ring_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/lh_ring_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal/lh_ring_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal/lh_ring_distal>
             point3f physics:localPos0 = (-0.0052516, -2.220446e-16, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -434,8 +434,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "lh_pinky_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
             point3f physics:localPos0 = (0.0024758, 0.028372, 0.092741)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.99904823, -0.043619126, 1.9428903e-16, 0)
@@ -451,10 +451,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/lh_pinky_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/lh_pinky_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal/lh_pinky_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal/lh_pinky_distal>
             point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -468,8 +468,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "rh_thumb_cmc_yaw"
         {
             uniform token physics:axis = "Z"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
             point3f physics:localPos0 = (0.011508, 0.022975, 0.032794)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0, -1, 0, 0)
@@ -483,8 +483,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "rh_thumb_cmc_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
             point3f physics:localPos0 = (0.0061649, 0.010678, -0.004891)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.41919965, -0.47202873, -0.27252436, -0.7260792)
@@ -500,10 +500,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 1.86
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_thumb_cmc_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/rh_thumb_cmc_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals/rh_thumb_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals/rh_thumb_distal>
             point3f physics:localPos0 = (0.0037776, 0, 0.045368)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -517,8 +517,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "rh_index_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
             point3f physics:localPos0 = (0.0024758, 0.02419, 0.098779)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.99965733, -0.026176646, 1.110223e-16, -5.551115e-17)
@@ -534,10 +534,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_index_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/rh_index_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal/rh_index_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal/rh_index_distal>
             point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -551,8 +551,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "rh_middle_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
             point3f physics:localPos0 = (0.00052576, 0.00634, 0.1027)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -568,10 +568,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_middle_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/rh_middle_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal/rh_middle_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal/rh_middle_distal>
             point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -585,8 +585,8 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "rh_ring_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
             point3f physics:localPos0 = (0.0010258, -0.011135, 0.098767)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (0.99965733, 0.026176646, 0, 1.3877788e-16)
@@ -602,10 +602,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_ring_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/rh_ring_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal/rh_ring_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal/rh_ring_distal>
             point3f physics:localPos0 = (-0.0052516, 2.220446e-16, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
@@ -619,11 +619,11 @@ def Xform "l1_h0602"
         def PhysicsRevoluteJoint "rh_pinky_mcp_pitch"
         {
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
             point3f physics:localPos0 = (0.0024758, -0.028372, 0.092741)
             point3f physics:localPos1 = (0, 0, 0)
-            quatf physics:localRot0 = (0.99904823, 0.043619126, 2.7755576e-16, 1.9428903e-16)
+            quatf physics:localRot0 = (0.99904823, 0.043619126, 5.551115e-17, -5.551115e-17)
             quatf physics:localRot1 = (1, 0, 0, 0)
             float physics:lowerLimit = 0
             float physics:upperLimit = 91.67325
@@ -636,10 +636,10 @@ def Xform "l1_h0602"
         )
         {
             float newton:mimicCoef1 = 0.89
-            prepend rel newton:mimicJoint = </l1_h0602/Physics/rh_pinky_mcp_pitch>
+            prepend rel newton:mimicJoint = </l1_h0612/Physics/rh_pinky_mcp_pitch>
             uniform token physics:axis = "Y"
-            rel physics:body0 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
-            rel physics:body1 = </l1_h0602/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal/rh_pinky_distal>
+            rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
+            rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal/rh_pinky_distal>
             point3f physics:localPos0 = (-0.0052516, 0, 0.036625)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)

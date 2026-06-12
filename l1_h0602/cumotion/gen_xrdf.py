@@ -1,8 +1,9 @@
-"""从 l1_h0602 的 collision 网格自动生成 cuMotion 碰撞球，写入 robot.xrdf。
+"""从 l1_h0612 的 collision 网格自动生成 cuMotion 碰撞球，写入 robot.xrdf。
 
+Isaac Sim 6 / cuMotion（XRDF 格式，非 lula）。
 用 cuMotion 的 `create_collision_sphere_generator(V,T).generate_spheres(N, offset)`：
 对每个连杆读它的 collision STL，按配置球数 N 均匀生成内切球，再用 radius_offset 适度膨胀。
-所有 collision origin 都是 0/scale=1，所以球心即连杆系坐标，无需变换。
+所有 collision origin 都是 0、scale=1，所以球心即连杆系坐标，无需变换。
 
 在 isaacsim venv 里运行（脚本会自动把 cuMotion 的 bundled 包加进 sys.path）：
     python l1_h0602/cumotion/gen_xrdf.py
@@ -16,25 +17,27 @@ import xml.etree.ElementTree as ET
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-URDF = os.path.join(HERE, "robot.urdf")
+URDF = os.path.join(HERE, "..", "urdf", "h0612.urdf")
 MESH_ROOT = os.path.join(HERE, "..", "urdf")  # collision filename 形如 ../meshes/xxx
 OUT = os.path.join(HERE, "robot.xrdf")
 
-# 让 bundled `cumotion` 包可导入（独立运行也能用）
+# 让 bundled `cumotion` 包可导入（独立运行也能用）。Win 下是 Lib\site-packages，
+# Linux 下是 lib/pythonX/site-packages，所以用递归 glob 兼容两者。
 for cand in glob.glob(os.path.join(
-        sys.prefix, "lib", "python*", "site-packages", "isaacsim", "exts",
-        "isaacsim.robot_motion.cumotion", "pip_prebundle")):
+        sys.prefix, "**", "isaacsim.robot_motion.cumotion", "pip_prebundle"),
+        recursive=True):
     sys.path.insert(0, cand)
 import cumotion  # noqa: E402
 
-# ---- 15 受控关节 + 锁定的非 mimic 手指关节 ----
+# ---- 15 受控关节（waist_joint1 是 fixed，不计）----
 CONTROLLED = (
     ["waist_joint2"]
     + [f"left_arm_joint_{i}" for i in range(1, 7)]
     + [f"right_arm_joint_{i}" for i in range(1, 7)]
     + ["neck_joint1", "neck_joint2"]
 )
-HAND_JOINTS = []  # 只列非 mimic 的（*_dip/*_ip 是 mimic，不能设默认位）
+# 锁定的非 mimic 手指关节（*_dip / *_ip 是 mimic，由父关节驱动，不能设默认位）
+HAND_JOINTS = []
 for s in ("lh", "rh"):
     HAND_JOINTS += [f"{s}_thumb_cmc_yaw", f"{s}_thumb_cmc_pitch",
                     f"{s}_index_mcp_pitch", f"{s}_middle_mcp_pitch",
@@ -55,8 +58,10 @@ for side in ("left", "right"):
     SPHERE_CFG[f"{side}_arm_link_4"] = (4, 0.03)
     SPHERE_CFG[f"{side}_arm_link_5"] = (2, 0.025)
     SPHERE_CFG[f"{side}_arm_link_6"] = (3, 0.03)
+# 手：base2 是拇指根部小转接件，给 1 个小球
 for sh in ("lh", "rh"):
     SPHERE_CFG[f"{sh}_hand_base_link"] = (4, 0.02)
+    SPHERE_CFG[f"{sh}_thumb_metacarpals_base2"] = (1, 0.012)
     for f in ("thumb_metacarpals", "thumb_distal", "index_proximal", "index_distal",
               "middle_proximal", "middle_distal", "ring_proximal", "ring_distal",
               "pinky_proximal", "pinky_distal"):
@@ -114,8 +119,8 @@ for side, sh in (("left", "lh"), ("right", "rh")):
     for i in range(1, 6):
         IGNORE[f"{side}_arm_link_{i}"] = [f"{side}_arm_link_{i + 1}"]
     IGNORE[f"{side}_arm_link_6"] = [f"{sh}_hand_base_link"]
-    # 同一只手内的连杆永远刚性锁定 -> 互相忽略
-    hand_links = [f"{sh}_hand_base_link"] + [
+    # 同一只手内的连杆永远刚性相邻 -> 互相忽略
+    hand_links = [f"{sh}_hand_base_link", f"{sh}_thumb_metacarpals_base2"] + [
         f"{sh}_{f}" for f in ("thumb_metacarpals", "thumb_distal", "index_proximal",
                               "index_distal", "middle_proximal", "middle_distal",
                               "ring_proximal", "ring_distal", "pinky_proximal", "pinky_distal")
@@ -127,7 +132,7 @@ for side, sh in (("left", "lh"), ("right", "rh")):
             IGNORE.setdefault(a, []).extend(rest)
 
 # ---- 输出 XRDF ----
-L = ["# 由 gen_xrdf.py 从 l1_h0602 collision 网格自动生成（cuMotion 球生成器）。",
+L = ["# 由 gen_xrdf.py 从 l1_h0612 collision 网格自动生成（cuMotion 球生成器，Isaac Sim 6）。",
      "format: xrdf", "format_version: 2.0", "", "default_joint_positions:"]
 L += [f"  {j}: 0.0" for j in HAND_JOINTS]
 L += ["", "cspace:", "  joint_names:"]

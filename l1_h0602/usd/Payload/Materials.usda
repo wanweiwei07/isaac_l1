@@ -3,13 +3,13 @@
     customLayerData = {
         string creator = "URDF USD Converter v0.1.2"
     }
-    defaultPrim = "l1_h0602"
+    defaultPrim = "l1_h0612"
     kilogramsPerUnit = 1
     metersPerUnit = 1
     upAxis = "Z"
 )
 
-def Xform "l1_h0602"
+def Xform "l1_h0612"
 {
     def Scope "Materials"
     {
@@ -148,7 +148,7 @@ def Xform "l1_h0602"
                 prepend apiSchemas = ["MaterialBindingAPI"]
             )
             {
-                rel material:binding = </l1_h0602/Materials/material_1>
+                rel material:binding = </l1_h0612/Materials/material_1>
             }
 
             over "waist_link1"
@@ -157,7 +157,7 @@ def Xform "l1_h0602"
                     prepend apiSchemas = ["MaterialBindingAPI"]
                 )
                 {
-                    rel material:binding = </l1_h0602/Materials/material_2>
+                    rel material:binding = </l1_h0612/Materials/material_2>
                 }
 
                 over "waist_link2"
@@ -166,7 +166,7 @@ def Xform "l1_h0602"
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </l1_h0602/Materials/material_3>
+                        rel material:binding = </l1_h0612/Materials/material_3>
                     }
 
                     over "neck_link1"
@@ -175,7 +175,7 @@ def Xform "l1_h0602"
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
-                            rel material:binding = </l1_h0602/Materials/material_4>
+                            rel material:binding = </l1_h0612/Materials/material_4>
                         }
 
                         over "neck_link2"
@@ -184,7 +184,7 @@ def Xform "l1_h0602"
                                 prepend apiSchemas = ["MaterialBindingAPI"]
                             )
                             {
-                                rel material:binding = </l1_h0602/Materials/material_5>
+                                rel material:binding = </l1_h0612/Materials/material_5>
                             }
                         }
                     }
@@ -195,7 +195,7 @@ def Xform "l1_h0602"
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
-                            rel material:binding = </l1_h0602/Materials/material_6>
+                            rel material:binding = </l1_h0612/Materials/material_6>
                         }
 
                         over "left_arm_link_2"
@@ -204,7 +204,7 @@ def Xform "l1_h0602"
                                 prepend apiSchemas = ["MaterialBindingAPI"]
                             )
                             {
-                                rel material:binding = </l1_h0602/Materials/material_7>
+                                rel material:binding = </l1_h0612/Materials/material_7>
                             }
 
                             over "left_arm_link_3"
@@ -213,7 +213,7 @@ def Xform "l1_h0602"
                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                 )
                                 {
-                                    rel material:binding = </l1_h0602/Materials/material_8>
+                                    rel material:binding = </l1_h0612/Materials/material_8>
                                 }
 
                                 over "left_arm_link_4"
@@ -222,7 +222,7 @@ def Xform "l1_h0602"
                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                     )
                                     {
-                                        rel material:binding = </l1_h0602/Materials/material_9>
+                                        rel material:binding = </l1_h0612/Materials/material_9>
                                     }
 
                                     over "left_arm_link_5"
@@ -231,7 +231,7 @@ def Xform "l1_h0602"
                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                         )
                                         {
-                                            rel material:binding = </l1_h0602/Materials/material_10>
+                                            rel material:binding = </l1_h0612/Materials/material_10>
                                         }
 
                                         over "left_arm_link_6"
@@ -240,7 +240,7 @@ def Xform "l1_h0602"
                                                 prepend apiSchemas = ["MaterialBindingAPI"]
                                             )
                                             {
-                                                rel material:binding = </l1_h0602/Materials/material_11>
+                                                rel material:binding = </l1_h0612/Materials/material_11>
                                             }
 
                                             over "lh_hand_base_link"
@@ -249,7 +249,7 @@ def Xform "l1_h0602"
                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                 )
                                                 {
-                                                    rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                    rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                 }
 
                                                 over "lh_thumb_metacarpals_base2"
@@ -258,7 +258,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/lh_o6_black_accent>
+                                                        rel material:binding = </l1_h0612/Materials/lh_o6_black_accent>
                                                     }
 
                                                     over "lh_thumb_metacarpals"
@@ -267,7 +267,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                         }
 
                                                         over "lh_thumb_distal"
@@ -276,7 +276,7 @@ def Xform "l1_h0602"
                                                                 prepend apiSchemas = ["MaterialBindingAPI"]
                                                             )
                                                             {
-                                                                rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                                rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                             }
                                                         }
                                                     }
@@ -288,7 +288,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                     }
 
                                                     over "lh_index_distal"
@@ -297,7 +297,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -308,7 +308,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                     }
 
                                                     over "lh_middle_distal"
@@ -317,7 +317,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -328,7 +328,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                     }
 
                                                     over "lh_ring_distal"
@@ -337,7 +337,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -348,7 +348,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                     }
 
                                                     over "lh_pinky_distal"
@@ -357,7 +357,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/lh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/lh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -375,7 +375,7 @@ def Xform "l1_h0602"
                             prepend apiSchemas = ["MaterialBindingAPI"]
                         )
                         {
-                            rel material:binding = </l1_h0602/Materials/material_12>
+                            rel material:binding = </l1_h0612/Materials/material_12>
                         }
 
                         over "right_arm_link_2"
@@ -384,7 +384,7 @@ def Xform "l1_h0602"
                                 prepend apiSchemas = ["MaterialBindingAPI"]
                             )
                             {
-                                rel material:binding = </l1_h0602/Materials/material_13>
+                                rel material:binding = </l1_h0612/Materials/material_13>
                             }
 
                             over "right_arm_link_3"
@@ -393,7 +393,7 @@ def Xform "l1_h0602"
                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                 )
                                 {
-                                    rel material:binding = </l1_h0602/Materials/material_14>
+                                    rel material:binding = </l1_h0612/Materials/material_14>
                                 }
 
                                 over "right_arm_link_4"
@@ -402,7 +402,7 @@ def Xform "l1_h0602"
                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                     )
                                     {
-                                        rel material:binding = </l1_h0602/Materials/material_15>
+                                        rel material:binding = </l1_h0612/Materials/material_15>
                                     }
 
                                     over "right_arm_link_5"
@@ -411,7 +411,7 @@ def Xform "l1_h0602"
                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                         )
                                         {
-                                            rel material:binding = </l1_h0602/Materials/material_16>
+                                            rel material:binding = </l1_h0612/Materials/material_16>
                                         }
 
                                         over "right_arm_link_6"
@@ -420,7 +420,7 @@ def Xform "l1_h0602"
                                                 prepend apiSchemas = ["MaterialBindingAPI"]
                                             )
                                             {
-                                                rel material:binding = </l1_h0602/Materials/material_17>
+                                                rel material:binding = </l1_h0612/Materials/material_17>
                                             }
 
                                             over "rh_hand_base_link"
@@ -429,7 +429,7 @@ def Xform "l1_h0602"
                                                     prepend apiSchemas = ["MaterialBindingAPI"]
                                                 )
                                                 {
-                                                    rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                    rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                 }
 
                                                 over "rh_thumb_metacarpals_base2"
@@ -438,7 +438,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/rh_o6_black_accent>
+                                                        rel material:binding = </l1_h0612/Materials/rh_o6_black_accent>
                                                     }
 
                                                     over "rh_thumb_metacarpals"
@@ -447,7 +447,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                         }
 
                                                         over "rh_thumb_distal"
@@ -456,7 +456,7 @@ def Xform "l1_h0602"
                                                                 prepend apiSchemas = ["MaterialBindingAPI"]
                                                             )
                                                             {
-                                                                rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                                rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                             }
                                                         }
                                                     }
@@ -468,7 +468,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                     }
 
                                                     over "rh_index_distal"
@@ -477,7 +477,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -488,7 +488,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                     }
 
                                                     over "rh_middle_distal"
@@ -497,7 +497,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -508,7 +508,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                     }
 
                                                     over "rh_ring_distal"
@@ -517,7 +517,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                         }
                                                     }
                                                 }
@@ -528,7 +528,7 @@ def Xform "l1_h0602"
                                                         prepend apiSchemas = ["MaterialBindingAPI"]
                                                     )
                                                     {
-                                                        rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                        rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                     }
 
                                                     over "rh_pinky_distal"
@@ -537,7 +537,7 @@ def Xform "l1_h0602"
                                                             prepend apiSchemas = ["MaterialBindingAPI"]
                                                         )
                                                         {
-                                                            rel material:binding = </l1_h0602/Materials/rh_o6_silver>
+                                                            rel material:binding = </l1_h0612/Materials/rh_o6_silver>
                                                         }
                                                     }
                                                 }

@@ -3,13 +3,13 @@
     customLayerData = {
         string creator = "URDF USD Converter v0.1.2"
     }
-    defaultPrim = "l1_h0602"
+    defaultPrim = "l1_h0612"
     kilogramsPerUnit = 1
     metersPerUnit = 1
     upAxis = "Z"
 )
 
-def Xform "l1_h0602"
+def Xform "l1_h0612"
 {
     def Scope "Geometry"
     {
@@ -27,7 +27,7 @@ def Xform "l1_h0602"
 
             def Mesh "base_link_1" (
                 displayName = "base_link"
-                prepend references = @./GeometryLibrary.usdc@</Geometry/base_link>
+                prepend references = @./GeometryLibrary.usdc@</Geometry/base_link_1>
             )
             {
                 uniform token purpose = "guide"
@@ -56,7 +56,7 @@ def Xform "l1_h0602"
 
                 def Mesh "waist_link1_1" (
                     displayName = "waist_link1"
-                    prepend references = @./GeometryLibrary.usdc@</Geometry/waist_link1>
+                    prepend references = @./GeometryLibrary.usdc@</Geometry/waist_link1_1>
                 )
                 {
                     uniform token purpose = "guide"
@@ -85,7 +85,7 @@ def Xform "l1_h0602"
 
                     def Mesh "waist_link2_1" (
                         displayName = "waist_link2"
-                        prepend references = @./GeometryLibrary.usdc@</Geometry/waist_link2>
+                        prepend references = @./GeometryLibrary.usdc@</Geometry/waist_link2_1>
                     )
                     {
                         uniform token purpose = "guide"
@@ -114,7 +114,7 @@ def Xform "l1_h0602"
 
                         def Mesh "neck_link1_1" (
                             displayName = "neck_link1"
-                            prepend references = @./GeometryLibrary.usdc@</Geometry/neck_link1>
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/neck_link1_1>
                         )
                         {
                             uniform token purpose = "guide"
@@ -143,7 +143,7 @@ def Xform "l1_h0602"
 
                             def Mesh "neck_link2_1" (
                                 displayName = "neck_link2"
-                                prepend references = @./GeometryLibrary.usdc@</Geometry/neck_link2>
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/neck_link2_1>
                             )
                             {
                                 uniform token purpose = "guide"
@@ -190,7 +190,7 @@ def Xform "l1_h0602"
 
                         def Mesh "left_arm_link_1_1" (
                             displayName = "left_arm_link_1"
-                            prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_1>
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_1_1>
                         )
                         {
                             uniform token purpose = "guide"
@@ -219,7 +219,7 @@ def Xform "l1_h0602"
 
                             def Mesh "left_arm_link_2_1" (
                                 displayName = "left_arm_link_2"
-                                prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_2>
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_2_1>
                             )
                             {
                                 uniform token purpose = "guide"
@@ -248,7 +248,7 @@ def Xform "l1_h0602"
 
                                 def Mesh "left_arm_link_3_1" (
                                     displayName = "left_arm_link_3"
-                                    prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_3>
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_3_1>
                                 )
                                 {
                                     uniform token purpose = "guide"
@@ -277,7 +277,7 @@ def Xform "l1_h0602"
 
                                     def Mesh "left_arm_link_4_1" (
                                         displayName = "left_arm_link_4"
-                                        prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_4>
+                                        prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_4_1>
                                     )
                                     {
                                         uniform token purpose = "guide"
@@ -306,7 +306,7 @@ def Xform "l1_h0602"
 
                                         def Mesh "left_arm_link_5_1" (
                                             displayName = "left_arm_link_5"
-                                            prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_5>
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_5_1>
                                         )
                                         {
                                             uniform token purpose = "guide"
@@ -335,7 +335,7 @@ def Xform "l1_h0602"
 
                                             def Mesh "left_arm_link_6_1" (
                                                 displayName = "left_arm_link_6"
-                                                prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_6>
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/left_arm_link_6_1>
                                             )
                                             {
                                                 uniform token purpose = "guide"
@@ -738,7 +738,7 @@ def Xform "l1_h0602"
 
                         def Mesh "right_arm_link_1_1" (
                             displayName = "right_arm_link_1"
-                            prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_1>
+                            prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_1_1>
                         )
                         {
                             uniform token purpose = "guide"
@@ -767,7 +767,7 @@ def Xform "l1_h0602"
 
                             def Mesh "right_arm_link_2_1" (
                                 displayName = "right_arm_link_2"
-                                prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_2>
+                                prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_2_1>
                             )
                             {
                                 uniform token purpose = "guide"
@@ -796,7 +796,7 @@ def Xform "l1_h0602"
 
                                 def Mesh "right_arm_link_3_1" (
                                     displayName = "right_arm_link_3"
-                                    prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_3>
+                                    prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_3_1>
                                 )
                                 {
                                     uniform token purpose = "guide"
@@ -825,7 +825,7 @@ def Xform "l1_h0602"
 
                                     def Mesh "right_arm_link_4_1" (
                                         displayName = "right_arm_link_4"
-                                        prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_4>
+                                        prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_4_1>
                                     )
                                     {
                                         uniform token purpose = "guide"
@@ -854,7 +854,7 @@ def Xform "l1_h0602"
 
                                         def Mesh "right_arm_link_5_1" (
                                             displayName = "right_arm_link_5"
-                                            prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_5>
+                                            prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_5_1>
                                         )
                                         {
                                             uniform token purpose = "guide"
@@ -883,7 +883,7 @@ def Xform "l1_h0602"
 
                                             def Mesh "right_arm_link_6_1" (
                                                 displayName = "right_arm_link_6"
-                                                prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_6>
+                                                prepend references = @./GeometryLibrary.usdc@</Geometry/right_arm_link_6_1>
                                             )
                                             {
                                                 uniform token purpose = "guide"

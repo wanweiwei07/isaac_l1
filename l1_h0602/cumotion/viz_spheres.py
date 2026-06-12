@@ -1,21 +1,37 @@
-"""用 update 回调显示 cuMotion 碰撞球（半透明红球，随机器人实时跟随）。
+"""在 run_isaacsim.ps1 启动的 Isaac Sim 里显示 cuMotion 碰撞球（半透明红球，实时跟随机器人）。
 
-前置：Isaac Sim 运行中 + main.py 已把机器人挂到 /World/l1_h0602。
-用法：VS Code 打开本文件 Ctrl+Enter 发送。再发一次会先清掉旧的再重建（改 XRDF 后刷新用）。
+前置：
+  1. 用 run_isaacsim.ps1 启动 Isaac Sim（已开 127.0.0.1:8226 代码服务器）。
+  2. VS Code 装 "Isaac Sim VS Code Edition" 插件，打开本文件 Ctrl+Enter 发送执行。
+
+机器人若尚未加载会自动挂到 /World/l1_h0602（不清场景）。
+再发一次会先清掉旧球再重建——改完 XRDF 重跑 gen_xrdf.py 后，发一次即可刷新。
 """
 import builtins
+import os
 
 import yaml
 import omni.kit.app
 import omni.usd
+from isaacsim.core.experimental.utils.stage import add_reference_to_stage
 from pxr import Gf, Usd, UsdGeom, Vt
 
+# ---- Windows 绝对路径（代码在本机运行中的 Isaac Sim 内执行）----
+PROJ = r"E:\isaac_proj\linx_isc6_l1\l1_h0602"
+USD_PATH = os.path.join(PROJ, "usd", "l1_h0612.usda")
+XRDF = os.path.join(PROJ, "cumotion", "robot.xrdf")
 ROBOT_ROOT = "/World/l1_h0602"
 VIZ_ROOT = "/World/viz_spheres"
-XRDF = "/home/wrs/Workspace/isaac_linxl1/l1_h0602/cumotion/robot.xrdf"
 _REG = "_viz_spheres_sub"
 
 stage = omni.usd.get_context().get_stage()
+
+# ---- 机器人没加载就先挂上（不新建 stage，避免清掉现有场景）----
+if not stage.GetPrimAtPath(ROBOT_ROOT).IsValid():
+    if not stage.GetPrimAtPath("/World").IsValid():
+        UsdGeom.Xform.Define(stage, "/World")
+    add_reference_to_stage(USD_PATH, ROBOT_ROOT)
+    print(f"机器人未加载，已挂到 {ROBOT_ROOT}")
 
 # ---- 清理上一次的 viz（重复执行时）----
 if hasattr(builtins, _REG):
@@ -23,11 +39,12 @@ if hasattr(builtins, _REG):
         getattr(builtins, _REG).unsubscribe()
     except Exception:
         pass
-if stage.GetPrimAtPath(VIZ_ROOT):
+if stage.GetPrimAtPath(VIZ_ROOT).IsValid():
     stage.RemovePrim(VIZ_ROOT)
 
 # ---- 读 XRDF 碰撞球（连杆局部坐标）----
-spheres_by_link = yaml.safe_load(open(XRDF))["geometry"]["robot_collision_spheres"]["spheres"]
+spheres_by_link = yaml.safe_load(open(XRDF, encoding="utf-8"))[
+    "geometry"]["robot_collision_spheres"]["spheres"]
 
 # ---- 连杆名 -> stage 里的 Xform prim ----
 link_prim = {}
