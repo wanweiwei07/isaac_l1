@@ -36,7 +36,7 @@ cspace:
   acceleration_limits: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
   jerk_limits: [1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0]
 
-tool_frames: ["lh_hand_base_link", "rh_hand_base_link"]
+tool_frames: ["lh_hand_base_link", "rh_hand_base_link", "lh_power_tcp", "lh_pinch_tcp", "lh_tripod_tcp", "rh_power_tcp", "rh_pinch_tcp", "rh_tripod_tcp"]
 
 world_collision:
   geometry: "robot_collision_spheres"
@@ -87,18 +87,18 @@ geometry:
   robot_collision_spheres:
     spheres:
       base_link:
-        - center: [ 0.0599, 0.0458, 0.2421 ]
-          radius: 0.2663
-        - center: [ -0.1542, 0.0552, 0.2464 ]
-          radius: 0.2633
-        - center: [ 0.1573, -0.0286, 0.2414 ]
-          radius: 0.2663
-        - center: [ -0.1708, -0.0727, 0.2747 ]
-          radius: 0.2426
-        - center: [ 0.191, 0.0899, 0.2796 ]
-          radius: 0.2288
-        - center: [ -0.2086, -0.0038, 0.7072 ]
-          radius: 0.1422
+        - center: [ 0.2, 0.1, 0.3 ]
+          radius: 0.2
+        - center: [ 0.2, 0.1, 0.2 ]
+          radius: 0.2
+        - center: [ 0.2, -0.1, 0.3 ]
+          radius: 0.2
+        - center: [ 0.2, -0.1, 0.2 ]
+          radius: 0.2
+        - center: [ -0.2, 0.1, 0.3 ]
+          radius: 0.2
+        - center: [ -0.2, 0.1, 0.2 ]
+          radius: 0.2
       waist_link1:
         - center: [ -0.0007, 0.0223, 0.4856 ]
           radius: 0.0658
@@ -150,33 +150,27 @@ geometry:
         - center: [ 0.0, 0.25, 0.0 ]
           radius: 0.05
       left_arm_link_3:
-        - center: [ 0.0311, 0.0006, 0.0005 ]
-          radius: 0.0841
-        - center: [ 0.0773, -0.0037, -0.0048 ]
-          radius: 0.0785
-        - center: [ -0.0018, 0.0018, -0.0003 ]
-          radius: 0.0823
+        - center: [ 0.0, 0.0, 0.005 ]
+          radius: 0.06
+        - center: [ 0.06, 0.0, 0.005 ]
+          radius: 0.06
+        - center: [ 0.12, 0.0, 0.005 ]
+          radius: 0.06
       left_arm_link_4:
-        - center: [ -0.0028, 0.0002, 0.0541 ]
-          radius: 0.0787
-        - center: [ -0.0025, -0.0005, 0.1124 ]
-          radius: 0.0712
-        - center: [ -0.0211, -0.0001, 0.1496 ]
-          radius: 0.0618
-        - center: [ 0.0174, -0.0006, 0.1325 ]
-          radius: 0.0665
+        - center: [ 0.0, 0.0, 0.06 ]
+          radius: 0.06
+        - center: [ 0.0, 0.0, 0.12 ]
+          radius: 0.06
       left_arm_link_5:
-        - center: [ 0.0117, -0.0034, -0.0159 ]
+        - center: [ 0.0, 0.0, 0.03 ]
           radius: 0.0371
-        - center: [ -0.0056, 0.0078, -0.0141 ]
+        - center: [ 0.0, 0.0, -0.02 ]
           radius: 0.0371
       left_arm_link_6:
-        - center: [ 0.0036, 0.0065, 0.0255 ]
-          radius: 0.0496
-        - center: [ -0.004, -0.0069, 0.0263 ]
-          radius: 0.0486
-        - center: [ -0.0085, 0.0048, 0.0263 ]
-          radius: 0.0486
+        - center: [ 0.0, 0.0, 0.0 ]
+          radius: 0.04
+        - center: [ 0.0, 0.0, 0.04 ]
+          radius: 0.03
       right_arm_link_1:
         - center: [ 0.0, 0.02, 0.05 ]
           radius: 0.06
@@ -196,114 +190,118 @@ geometry:
         - center: [ 0.0, -0.25, 0.0 ]
           radius: 0.05
       right_arm_link_3:
-        - center: [ 0.0311, 0.0006, 0.0005 ]
-          radius: 0.0841
-        - center: [ 0.0773, -0.0037, -0.0048 ]
-          radius: 0.0785
-        - center: [ -0.0018, 0.0018, -0.0003 ]
-          radius: 0.0823
+        - center: [ 0.0, 0.0, 0.005 ]
+          radius: 0.06
+        - center: [ 0.06, 0.0, 0.005 ]
+          radius: 0.06
+        - center: [ 0.12, 0.0, 0.005 ]
+          radius: 0.06
       right_arm_link_4:
-        - center: [ -0.0028, 0.0002, 0.0541 ]
-          radius: 0.0787
-        - center: [ -0.0025, -0.0005, 0.1124 ]
-          radius: 0.0712
-        - center: [ -0.0211, -0.0001, 0.1496 ]
-          radius: 0.0618
-        - center: [ 0.0174, -0.0006, 0.1325 ]
-          radius: 0.0665
+        - center: [ 0.0, 0.0, 0.06 ]
+          radius: 0.06
+        - center: [ 0.0, 0.0, 0.12 ]
+          radius: 0.06
       right_arm_link_5:
-        - center: [ 0.0117, 0.0034, 0.0159 ]
+        - center: [ 0.0, 0.0, 0.03 ]
           radius: 0.0371
-        - center: [ -0.0056, -0.0078, 0.0141 ]
+        - center: [ 0.0, 0.0, -0.02 ]
           radius: 0.0371
       right_arm_link_6:
-        - center: [ 0.0002, -0.0074, 0.0255 ]
-          radius: 0.0496
-        - center: [ -0.0, 0.008, 0.0263 ]
-          radius: 0.0486
-        - center: [ 0.0097, -0.001, 0.0262 ]
-          radius: 0.0486
+        - center: [ 0.0, 0.0, 0.0 ]
+          radius: 0.04
+        - center: [ 0.0, 0.0, 0.04 ]
+          radius: 0.03
       lh_hand_base_link:
-        - center: [ 0.0062, -0.0084, 0.0204 ]
-          radius: 0.0232
-        - center: [ -0.0066, 0.0144, 0.0222 ]
-          radius: 0.0226
-        - center: [ -0.0066, -0.0124, 0.0411 ]
-          radius: 0.0226
-        - center: [ -0.0059, -0.0116, 0.0236 ]
-          radius: 0.0221
-      lh_thumb_metacarpals_base2:
-        - center: [ -0.0034, -0.0014, 0.0064 ]
-          radius: 0.013
+        - center: [ 0.0, 0.02, 0.05 ]
+          radius: 0.02
+        - center: [ 0.0, -0.02, 0.05 ]
+          radius: 0.02
+        - center: [ 0.0, 0.02, 0.075 ]
+          radius: 0.02
+        - center: [ 0.0, -0.02, 0.075 ]
+          radius: 0.02
       lh_thumb_metacarpals:
-        - center: [ -0.0059, -0.0082, 0.0217 ]
-          radius: 0.0141
+        - center: [ 0.0, 0.0, 0.02 ]
+          radius: 0.015
       lh_thumb_distal:
-        - center: [ -0.0047, 0.0012, 0.0364 ]
-          radius: 0.0177
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       lh_index_proximal:
-        - center: [ -0.0006, -0.0013, -0.0026 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       lh_index_distal:
-        - center: [ 0.0068, -0.0, 0.0217 ]
-          radius: 0.0173
+        - center: [ 0.01, 0.0, 0.025 ]
+          radius: 0.0075
       lh_middle_proximal:
-        - center: [ -0.0031, 0.0004, 0.0011 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       lh_middle_distal:
-        - center: [ 0.0048, 0.0006, 0.019 ]
-          radius: 0.0173
+        - center: [ 0.0125, 0.0, 0.03 ]
+          radius: 0.0075
       lh_ring_proximal:
-        - center: [ 0.0033, 0.0042, 0.0131 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       lh_ring_distal:
-        - center: [ 0.0068, -0.0, 0.0217 ]
-          radius: 0.0173
+        - center: [ 0.0125, -0.0, 0.03 ]
+          radius: 0.0075
       lh_pinky_proximal:
-        - center: [ -0.0006, -0.0013, -0.0026 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       lh_pinky_distal:
-        - center: [ 0.0068, -0.0, 0.0217 ]
-          radius: 0.0173
+        - center: [ 0.0125, -0.0, 0.03 ]
+          radius: 0.0075
       rh_hand_base_link:
-        - center: [ 0.0039, 0.0084, 0.0218 ]
-          radius: 0.0232
-        - center: [ -0.0059, 0.011, 0.0237 ]
-          radius: 0.0221
-        - center: [ -0.0074, -0.0118, 0.0393 ]
-          radius: 0.0215
-        - center: [ -0.0159, -0.0236, 0.0583 ]
-          radius: 0.021
-      rh_thumb_metacarpals_base2:
-        - center: [ 0.001, 0.0056, -0.0067 ]
-          radius: 0.0139
+        - center: [ 0.0, 0.02, 0.05 ]
+          radius: 0.02
+        - center: [ 0.0, -0.02, 0.05 ]
+          radius: 0.02
+        - center: [ 0.0, 0.02, 0.075 ]
+          radius: 0.02
+        - center: [ 0.0, -0.02, 0.075 ]
+          radius: 0.02
       rh_thumb_metacarpals:
-        - center: [ -0.0055, -0.0083, 0.0238 ]
-          radius: 0.0141
+        - center: [ 0.0, 0.0, 0.02 ]
+          radius: 0.015
       rh_thumb_distal:
-        - center: [ -0.0056, -0.0013, 0.03 ]
-          radius: 0.0177
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       rh_index_proximal:
-        - center: [ 0.0026, -0.0006, 0.005 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       rh_index_distal:
-        - center: [ 0.0055, -0.0, 0.02 ]
-          radius: 0.0173
+        - center: [ 0.01, 0.0, 0.025 ]
+          radius: 0.0075
       rh_middle_proximal:
-        - center: [ 0.0026, -0.0006, 0.005 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       rh_middle_distal:
-        - center: [ 0.0055, -0.0, 0.02 ]
-          radius: 0.0173
+        - center: [ 0.0125, 0.0, 0.03 ]
+          radius: 0.0075
       rh_ring_proximal:
-        - center: [ 0.0026, -0.0006, 0.005 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       rh_ring_distal:
-        - center: [ 0.0055, -0.0, 0.02 ]
-          radius: 0.0173
+        - center: [ 0.0125, -0.0, 0.03 ]
+          radius: 0.0075
       rh_pinky_proximal:
-        - center: [ 0.0026, -0.0006, 0.005 ]
-          radius: 0.013
+        - center: [ -0.005, 0.0, 0.0 ]
+          radius: 0.0125
+        - center: [ -0.005, 0.0, 0.03 ]
+          radius: 0.01
       rh_pinky_distal:
-        - center: [ 0.0055, -0.0, 0.02 ]
-          radius: 0.0173
+        - center: [ 0.0125, -0.0, 0.03 ]
+          radius: 0.0075

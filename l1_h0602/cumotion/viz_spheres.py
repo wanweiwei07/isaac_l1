@@ -16,8 +16,8 @@ import omni.usd
 from isaacsim.core.experimental.utils.stage import add_reference_to_stage
 from pxr import Gf, Usd, UsdGeom, Vt
 
-# ---- Windows 绝对路径（代码在本机运行中的 Isaac Sim 内执行）----
-PROJ = r"E:\isaac_proj\linx_isc6_l1\l1_h0602"
+# ---- 绝对路径（代码在本机运行中的 Isaac Sim 内执行）----
+PROJ = "/home/wrs/Workspace/isaac_linxl1/l1_h0602"
 USD_PATH = os.path.join(PROJ, "usd", "l1_h0612.usda")
 XRDF = os.path.join(PROJ, "cumotion", "robot.xrdf")
 ROBOT_ROOT = "/World/l1_h0602"

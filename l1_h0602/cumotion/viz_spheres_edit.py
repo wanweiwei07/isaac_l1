@@ -22,9 +22,9 @@ import omni.usd
 from isaacsim.core.experimental.utils.stage import add_reference_to_stage
 from pxr import Gf, Usd, UsdGeom, Vt
 
-MODE = "dump"   # "build" 建可拖动的球；调好后改成 "dump" 写回 XRDF
+MODE = "build"   # "build" 建可拖动的球；调好后改成 "dump" 写回 XRDF
 
-PROJ = r"E:\isaac_proj\linx_isc6_l1\l1_h0602"
+PROJ = "/home/wrs/Workspace/isaac_linxl1/l1_h0602"
 USD_PATH = os.path.join(PROJ, "usd", "l1_h0612.usda")
 XRDF = os.path.join(PROJ, "cumotion", "robot.xrdf")
 ROBOT_ROOT = "/World/l1_h0602"
@@ -74,6 +74,8 @@ if MODE == "build":
             continue
         for j, s in enumerate(sphs):
             path = f"{parent.GetPath().pathString}/_edit_{link}_{j}"
+            if stage.GetPrimAtPath(path).IsValid():
+                stage.RemovePrim(path)   # 防 builtins 注册表与 stage 失同步导致 op 重复
             sphere = UsdGeom.Sphere.Define(stage, path)
             sphere.CreateRadiusAttr(float(s["radius"]))   # 基准半径；缩放在它上面叠
             sphere.CreateDisplayColorAttr(Vt.Vec3fArray([Gf.Vec3f(0.9, 0.1, 0.1)]))

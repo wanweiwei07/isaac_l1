@@ -29,3 +29,6 @@ log/
 Thumbs.db
 *.swp
 *~
+
+# ---- drive 自整定日志（运行时生成）----
+l1_h0602/cumotion/tune_log.txt

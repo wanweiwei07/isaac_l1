@@ -9,8 +9,11 @@
     upAxis = "Z"
 )
 
-def Xform "l1_h0612"
+def Xform "l1_h0612" (
+    prepend apiSchemas = ["PhysicsArticulationRootAPI", "NewtonArticulationRootAPI"]
+)
 {
+    bool newton:selfCollisionEnabled = false
     def Scope "Physics"
     {
         def PhysicsFixedJoint "root_joint"
@@ -35,8 +38,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "waist_joint2"
+        def PhysicsRevoluteJoint "waist_joint2" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
@@ -50,8 +60,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "neck_joint1"
+        def PhysicsRevoluteJoint "neck_joint1" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/neck_link1>
@@ -65,8 +82,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "neck_joint2"
+        def PhysicsRevoluteJoint "neck_joint2" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/neck_link1>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/neck_link1/neck_link2>
@@ -80,8 +104,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "left_arm_joint_1"
+        def PhysicsRevoluteJoint "left_arm_joint_1" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
@@ -95,8 +126,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "left_arm_joint_2"
+        def PhysicsRevoluteJoint "left_arm_joint_2" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
@@ -110,8 +148,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "left_arm_joint_3"
+        def PhysicsRevoluteJoint "left_arm_joint_3" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
@@ -125,8 +170,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "left_arm_joint_4"
+        def PhysicsRevoluteJoint "left_arm_joint_4" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
@@ -140,8 +192,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "left_arm_joint_5"
+        def PhysicsRevoluteJoint "left_arm_joint_5" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
@@ -155,8 +214,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "left_arm_joint_6"
+        def PhysicsRevoluteJoint "left_arm_joint_6" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6>
@@ -170,8 +236,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "right_arm_joint_1"
+        def PhysicsRevoluteJoint "right_arm_joint_1" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
@@ -185,8 +258,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "right_arm_joint_2"
+        def PhysicsRevoluteJoint "right_arm_joint_2" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
@@ -200,8 +280,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "right_arm_joint_3"
+        def PhysicsRevoluteJoint "right_arm_joint_3" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
@@ -215,8 +302,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "right_arm_joint_4"
+        def PhysicsRevoluteJoint "right_arm_joint_4" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
@@ -230,8 +324,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "right_arm_joint_5"
+        def PhysicsRevoluteJoint "right_arm_joint_5" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
@@ -245,8 +346,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 3
         }
 
-        def PhysicsRevoluteJoint "right_arm_joint_6"
+        def PhysicsRevoluteJoint "right_arm_joint_6" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6>
@@ -280,8 +388,15 @@ def Xform "l1_h0612"
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
 
-        def PhysicsRevoluteJoint "lh_thumb_cmc_yaw"
+        def PhysicsRevoluteJoint "lh_thumb_cmc_yaw" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
@@ -295,8 +410,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "lh_thumb_cmc_pitch"
+        def PhysicsRevoluteJoint "lh_thumb_cmc_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_thumb_metacarpals_base2/lh_thumb_metacarpals>
@@ -329,8 +451,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "lh_index_mcp_pitch"
+        def PhysicsRevoluteJoint "lh_index_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_index_proximal>
@@ -363,8 +492,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "lh_middle_mcp_pitch"
+        def PhysicsRevoluteJoint "lh_middle_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_middle_proximal>
@@ -397,8 +533,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "lh_ring_mcp_pitch"
+        def PhysicsRevoluteJoint "lh_ring_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_ring_proximal>
@@ -431,8 +574,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "lh_pinky_mcp_pitch"
+        def PhysicsRevoluteJoint "lh_pinky_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/left_arm_link_1/left_arm_link_2/left_arm_link_3/left_arm_link_4/left_arm_link_5/left_arm_link_6/lh_hand_base_link/lh_pinky_proximal>
@@ -465,8 +615,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "rh_thumb_cmc_yaw"
+        def PhysicsRevoluteJoint "rh_thumb_cmc_yaw" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Z"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
@@ -480,8 +637,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "rh_thumb_cmc_pitch"
+        def PhysicsRevoluteJoint "rh_thumb_cmc_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_thumb_metacarpals_base2/rh_thumb_metacarpals>
@@ -514,8 +678,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "rh_index_mcp_pitch"
+        def PhysicsRevoluteJoint "rh_index_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_index_proximal>
@@ -548,8 +719,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "rh_middle_mcp_pitch"
+        def PhysicsRevoluteJoint "rh_middle_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_middle_proximal>
@@ -582,8 +760,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "rh_ring_mcp_pitch"
+        def PhysicsRevoluteJoint "rh_ring_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_ring_proximal>
@@ -616,8 +801,15 @@ def Xform "l1_h0612"
             custom float urdf:limit:velocity = 1
         }
 
-        def PhysicsRevoluteJoint "rh_pinky_mcp_pitch"
+        def PhysicsRevoluteJoint "rh_pinky_mcp_pitch" (
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+        )
         {
+            uniform token drive:angular:physics:type = "acceleration"
+            float drive:angular:physics:stiffness = 160000
+            float drive:angular:physics:damping = 1000
+            float drive:angular:physics:maxForce = 1000000
+            float drive:angular:physics:targetPosition = 0
             uniform token physics:axis = "Y"
             rel physics:body0 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link>
             rel physics:body1 = </l1_h0612/Geometry/base_link/waist_link1/waist_link2/right_arm_link_1/right_arm_link_2/right_arm_link_3/right_arm_link_4/right_arm_link_5/right_arm_link_6/rh_hand_base_link/rh_pinky_proximal>
@@ -654,7 +846,7 @@ def Xform "l1_h0612"
     over "Geometry"
     {
         over "base_link" (
-            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsArticulationRootAPI", "NewtonArticulationRootAPI", "PhysicsMassAPI"]
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
         )
         {
             point3f physics:centerOfMass = (-0.021001624, -0.0005738248, 0.21261086)

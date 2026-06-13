@@ -139,7 +139,7 @@ L += ["", "cspace:", "  joint_names:"]
 L += [f'    - "{j}"' for j in CONTROLLED]
 L += ["  acceleration_limits: [" + ", ".join(str(ACCEL[j]) for j in CONTROLLED) + "]",
       "  jerk_limits: [" + ", ".join(str(JERK[j]) for j in CONTROLLED) + "]", "",
-      'tool_frames: ["lh_hand_base_link", "rh_hand_base_link"]', "",
+      'tool_frames: ["lh_hand_base_link", "rh_hand_base_link", "lh_power_tcp", "lh_pinch_tcp", "lh_tripod_tcp", "rh_power_tcp", "rh_pinch_tcp", "rh_tripod_tcp"]', "",
       "world_collision:", '  geometry: "robot_collision_spheres"', "",
       "self_collision:", '  geometry: "robot_collision_spheres"', "  ignore:"]
 for k, v in IGNORE.items():
